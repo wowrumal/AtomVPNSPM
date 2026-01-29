@@ -1,0 +1,37 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target x86_64-apple-macos10.15 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name AtomSDKTunnel
+import AtomOVPNTunnel
+@_exported import AtomSDKTunnel
+import Foundation
+import NetworkExtension
+import OSLog
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class AtomSDKTunnelDarwinNotificationManager : ObjectiveC.NSObject {
+  @objc deinit
+}
+extension NetworkExtension.NEPacketTunnelFlow : AtomOVPNTunnel.OpenVPNAdapterPacketFlow {
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(macOS 10.12, *)
+open class AtomPacketTunnelProvider : NetworkExtension.NEPacketTunnelProvider {
+  @objc override dynamic open func startTunnel(options: [Swift.String : ObjectiveC.NSObject]? = nil, completionHandler: @escaping ((any Swift.Error)?) -> Swift.Void)
+  @objc override dynamic open func stopTunnel(with reason: NetworkExtension.NEProviderStopReason, completionHandler: @escaping () -> Swift.Void)
+  @objc override dynamic open func handleAppMessage(_ messageData: Foundation.Data, completionHandler: ((Foundation.Data?) -> Swift.Void)?)
+  @objc override dynamic open func sleep(completionHandler: @escaping () -> Swift.Void)
+  @objc override dynamic open func wake()
+  @objc deinit
+}
+@available(macOS 10.12, *)
+extension AtomSDKTunnel.AtomPacketTunnelProvider : AtomOVPNTunnel.OpenVPNAdapterDelegate {
+  @objc dynamic public func openVPNAdapter(_ openVPNAdapter: AtomOVPNTunnel.OpenVPNAdapter, configureTunnelWithNetworkSettings networkSettings: NetworkExtension.NEPacketTunnelNetworkSettings?, completionHandler: @escaping ((any Swift.Error)?) -> Swift.Void)
+  public func openVPNAdapter(_ openVPNAdapter: AtomOVPNTunnel.OpenVPNAdapter, configureTunnelWithNetworkSettings networkSettings: NetworkExtension.NEPacketTunnelNetworkSettings, completionHandler: @escaping ((any AtomOVPNTunnel.OpenVPNAdapterPacketFlow)?) -> Swift.Void)
+  @objc dynamic public func openVPNAdapter(_ openVPNAdapter: AtomOVPNTunnel.OpenVPNAdapter, handleError error: any Swift.Error)
+  @objc dynamic public func openVPNAdapter(_ openVPNAdapter: AtomOVPNTunnel.OpenVPNAdapter, handleEvent event: AtomOVPNTunnel.OpenVPNAdapterEvent, message: Swift.String?)
+  @objc dynamic public func openVPNAdapterDidReceiveClockTick(_ openVPNAdapter: AtomOVPNTunnel.OpenVPNAdapter)
+  @objc dynamic public func openVPNAdapter(_ openVPNAdapter: AtomOVPNTunnel.OpenVPNAdapter, handleLogMessage logMessage: Swift.String)
+}

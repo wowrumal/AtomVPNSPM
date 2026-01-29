@@ -1,0 +1,11 @@
+framework module AtomCore {
+  umbrella header "AtomCore.h"
+  export *
+
+  module * { export * }
+}
+
+module AtomCore.Swift {
+  header "AtomCore-Swift.h"
+  requires objc
+}

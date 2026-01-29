@@ -1,0 +1,24 @@
+PODS:
+  - AtomCore (2.3.0)
+  - AtomSDKBySecure (6.7.0):
+    - AtomCore (>= 2.3.0)
+  - AtomSDKTunnel (4.3.0)
+
+DEPENDENCIES:
+  - AtomSDKBySecure
+  - AtomSDKTunnel
+
+SPEC REPOS:
+  trunk:
+    - AtomCore
+    - AtomSDKBySecure
+    - AtomSDKTunnel
+
+SPEC CHECKSUMS:
+  AtomCore: b0091211f9de39f071abb815e6c723523f479a62
+  AtomSDKBySecure: 748330a7426485a9a707377318b35185da7d5881
+  AtomSDKTunnel: e236f86180adc636c857f2398c891955a926ca16
+
+PODFILE CHECKSUM: bb0fb3c5cddd8d1d922cdf9e2c239c701cfb0b26
+
+COCOAPODS: 1.16.2

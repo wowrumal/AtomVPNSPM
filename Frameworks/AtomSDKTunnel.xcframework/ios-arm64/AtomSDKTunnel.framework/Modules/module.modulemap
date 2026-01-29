@@ -1,0 +1,11 @@
+framework module AtomSDKTunnel {
+  umbrella header "AtomSDKTunnel.h"
+  export *
+
+  module * { export * }
+}
+
+module AtomSDKTunnel.Swift {
+  header "AtomSDKTunnel-Swift.h"
+  requires objc
+}

@@ -1,0 +1,615 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-tvos17.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AtomCore
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+@_exported import AtomCore
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc public class Server : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
+  @objc public var nasIdentifier: Swift.String?
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc override dynamic public func setValue(_ value: Any?, forKey: Swift.String)
+  @objc override dynamic public func setValue(_ value: Any?, forUndefinedKey key: Swift.String)
+  @objc public init(fromJSON: Foundation.NSDictionary)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public protocol AtomAnalyticsProvider : ObjectiveC.NSObjectProtocol {
+  @objc(initializeWithToken:loggingEnabled:trackAutomaticEvents:flushInterval:) func initialize(withToken token: Swift.String, loggingEnabled: Swift.Bool, trackAutomaticEvents: Swift.Bool, flushInterval: Swift.Double)
+  @objc(trackWithEvent:properties:) func track(withEvent event: Swift.String, properties: [Swift.String : Any]?)
+  @objc(identifyWithDistinctId:) func identify(withDistinctId distinctId: Swift.String)
+  @objc func flush()
+  @objc func registerSuperProperties(_ properties: [Swift.String : Any])
+  @objc optional func reset()
+}
+public class CoreHelperMethods {
+  public init()
+  public func getDifferenceOfDatesInSeconds(startDate: Foundation.Date?, endDate: Foundation.Date?) -> Swift.Int
+  public static func makeUrl(baseUrl: Swift.String, endPoint: Swift.String) -> Swift.String
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class AtomDns : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
+  @objc override dynamic public init()
+  @objc public var hostname: Swift.String?
+  @objc public var type: Swift.String?
+  @objc public var dnsid: Swift.Int
+  @objc public var acknowledgementServer: Swift.String?
+  @objc public var multiportRange: Swift.String?
+  @objc public var configurationVersion: Swift.String?
+  @objc public var portNumber: Swift.Int
+  @objc public var isMultiport: Swift.Bool
+  @objc public var ipTranslation: Swift.String?
+  @objc public var tags: Swift.Array<Swift.String>?
+  public func copyObject() throws -> AtomCore.AtomDns
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public enum DeviceTypes : Swift.String {
+  case IOS
+  case MACOX
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class ApiException : Swift.Error {
+  public var errorCode: Swift.Int
+  public var errorMessage: Swift.String?
+  public var exception: AtomCore.ApiException?
+  public init(errorCode: Swift.Int, exception: AtomCore.ApiException?)
+  public init(errorCode: Swift.Int, message: Swift.String, exception: AtomCore.ApiException?)
+  @objc deinit
+}
+public class AtomLocalDataModel : Swift.Codable {
+  public init()
+  public var reseller: AtomCore.AtomReseller?
+  public var ovpn_configuration: [AtomCore.AtomOvpnConfiguration]?
+  public var default_account: [AtomCore.AtomDefaultAccount]?
+  public var custom_attributes: [AtomCore.AtomMasterCustomAttributes]?
+  public var protocols: [AtomCore.AtomProtocol]?
+  public var data_centers: [AtomCore.AtomDatacenters]?
+  public var dns: [AtomCore.AtomDns]?
+  public var packages: [AtomCore.AtomPackages]?
+  public var groups: [AtomCore.AtomGroups]?
+  public var channels: [AtomCore.AtomChannel]?
+  public var countries: [AtomCore.AtomCountry]?
+  public var cities: [AtomCore.AtomCity]?
+  public var purposes: [AtomCore.AtomPurposes]?
+  public var smart_connect: [AtomCore.AtomSmartConnect]?
+  public var timestamp: AtomCore.AtomTimestamp?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class AtomPurposeProtocolDns : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc public var id: Swift.String
+  @objc public var purposeId: Swift.Int
+  @objc public var protocols: AtomCore.AtomProtocol?
+  @objc public var dns: AtomCore.AtomDns?
+  @objc public var configuration_version: Swift.String
+  @objc public var multiport_supported: Swift.Bool
+  @objc public var port_number: Swift.Int
+  @objc public var api_endpoint: Swift.Int
+  public func copyObject() throws -> AtomCore.AtomPurposeProtocolDns
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class AtomCity : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
+  @objc override dynamic public init()
+  @objc public var cityId: Swift.Int
+  @objc public var name: Swift.String?
+  @objc public var latitude: Swift.Double
+  @objc public var longitude: Swift.Double
+  @objc public var country: Swift.String?
+  @objc public var countryId: Swift.Int
+  @objc public var latency: Swift.Int
+  @objc public var data_centers: [AtomCore.AtomDatacenters]?
+  @objc public var protocols: [AtomCore.AtomProtocol]?
+  @objc public var custom_attributes: [AtomCore.AtomCustomAttributeObjects]?
+  @objc public var cityProtocolDns: [AtomCore.AtomCityProtocolDns]?
+  @objc public var recommendedProtocol: AtomCore.AtomProtocol?
+  @objc public var features: [Swift.String]?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc public init(fromJSON: Foundation.NSDictionary)
+  @objc override dynamic public func setValue(_ value: Any?, forUndefinedKey key: Swift.String)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class AtomPackages : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc public var packageId: Swift.String
+  @objc public var name: Swift.String?
+  @objc public var multi_login: Swift.String
+  @objc public var session_limit: Swift.String
+  @objc public var accounts: Swift.String
+  @objc public var concurrent_users: Swift.String
+  @objc public var bandwidth: Swift.Int
+  @objc public var protocols: [AtomCore.AtomProtocol]?
+  @objc public var channels: [AtomCore.AtomChannel]?
+  @objc public var countries: [AtomCore.AtomCountry]?
+  @objc public var purposes: [AtomCore.AtomPurposes]?
+  @objc public var cities: [AtomCore.AtomCity]?
+  @objc public var custom_attributes: [AtomCore.AtomCustomAttributeObjects]?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class AtomConfiguration : ObjectiveC.NSObject {
+  @objc public var secretKey: Swift.String?
+  @objc public var baseUrl: Foundation.URL?
+  @objc public var vpnInterfaceName: Swift.String?
+  @objc public var tunnelProviderBundleIdentifier: Swift.String?
+  @objc public var wireGuardTunnelProviderBundleIdentifier: Swift.String?
+  @objc public var appGroupIdentifier: Swift.String?
+  @objc public var enableVPNLogs: Swift.Bool
+  @objc public var persistVPNDetails: Swift.Bool
+  @objc public var disableAnalytics: Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class AtomCountry : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding, Foundation.NSCopying {
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc override dynamic public init()
+  @objc public var country: Swift.String?
+  @objc public var name: Swift.String?
+  @objc public var cities: [AtomCore.AtomCity]?
+  @objc public var latitude: Swift.Double
+  @objc public var longitude: Swift.Double
+  @objc public var latency: Swift.Int
+  @objc public var iso_code: Swift.String?
+  @objc public var isSmartDialingSupported: Swift.Bool
+  @objc public var rank: Swift.Int
+  @objc public var isVirtual: Swift.Bool
+  @objc public var acknowledgement_server: Swift.String?
+  @objc public var dataCenters: [AtomCore.AtomDatacenters]?
+  @objc public var protocols: [AtomCore.AtomProtocol]?
+  @objc public var custom_attributes: [AtomCore.AtomCustomAttributeObjects]?
+  @objc public var countryProtocolDns: [AtomCore.AtomCountryProtocolDns]?
+  @objc public var recommendedProtocol: AtomCore.AtomProtocol?
+  @objc public var features: [Swift.String]?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc public init(fromJSON: Foundation.NSDictionary)
+  @objc override dynamic public func setValue(_ value: Any?, forUndefinedKey key: Swift.String)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public class AtomLocation : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc public init?(countryObject: AtomCore.AtomCountry, cityObject: AtomCore.AtomCity? = nil, ipAddress: Swift.String? = nil)
+  @objc public var country: AtomCore.AtomCountry?
+  @objc public var city: AtomCore.AtomCity?
+  @objc public var ip: Swift.String?
+  @objc public var server: AtomCore.Server?
+  @objc public init(fromJSON: Foundation.NSDictionary)
+  @objc override dynamic public func setValue(_ value: Any?, forUndefinedKey key: Swift.String)
+  @objc override dynamic public func setValue(_ value: Any?, forKey: Swift.String)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public protocol BaseNetworkProtocol {
+  var apiUrl: Swift.String { get set }
+  var apiEndPoint: Swift.String { get set }
+  var apiHttpBody: Swift.String { get set }
+  var apiParameters: [Swift.String : Any] { get set }
+  var apiHttpHeader: [Swift.String : Swift.String]? { get set }
+  var apiHttpResponse: Swift.String { get set }
+  var apiHttpMethod: Swift.String { get set }
+  var apiHttpResponseCode: Swift.Int { get set }
+  var apiErrorCode: Swift.String { get set }
+  var apiErrorMessage: Swift.String { get set }
+  var successCode: Swift.Int { get set }
+  var apiRetry: Swift.Bool { get set }
+  var isAmazonS3call: Swift.Bool { get set }
+}
+@_inheritsConvenienceInitializers @objc public class ApiBaseUrlModel : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var base_url: Swift.String?
+  @objc public var secondary_base_url: Swift.String?
+  @objc public var auth_accessToken: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public protocol ManagerProtocol {
+  @objc var atomConfiguration: AtomCore.AtomConfiguration? { get set }
+  @objc var accessToken: AtomCore.AccessTokenModel? { get set }
+  @objc var activeBaseUrl: Swift.String? { get set }
+  @objc var apiUrl: AtomCore.ApiBaseUrlModel? { get set }
+}
+extension AtomCore.ManagerProtocol {
+  public func validate(authToken: @escaping (AtomCore.AccessTokenModel?, AtomCore.ApiException?) -> Swift.Void)
+}
+@objc @_inheritsConvenienceInitializers public class AtomReseller : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc public var resellerId: Swift.Int
+  @objc public var resellerUId: Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class AtomExperimentProperties : ObjectiveC.NSObject {
+  @objc public var isExperimentedUser: Swift.Bool
+  @objc public var baseSpeed: Swift.Double
+  @objc public var baseSpeedSource: Swift.String?
+  @objc convenience public init(isExperimentedUser: Swift.Bool, baseSpeed: Swift.Double)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class AccessTokenModel : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var accessToken: Swift.String?
+  @objc public var refreshToken: Swift.String?
+  @objc public var resellerId: Swift.String?
+  @objc public var resellerUid: Swift.String?
+  public var expiry: Swift.Int?
+  public var generatedDate: Foundation.Date?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public protocol PingProtocol {
+  @objc func getOptimizedCountries(response: @escaping ([AtomCore.AtomCountry]?, (any Swift.Error)?) -> Swift.Void)
+  @objc func getOptimizedCities(response: @escaping ([AtomCore.AtomCity]?, (any Swift.Error)?) -> Swift.Void)
+  @objc func getOptimizedDataCenters(response: @escaping ([AtomCore.AtomDatacenters]?, (any Swift.Error)?) -> Swift.Void)
+}
+extension Swift.Array where Element == AtomCore.AtomCountry {
+  public func getOptimizedCountries(response: @escaping ([AtomCore.AtomCountry]?, (any Swift.Error)?) -> Swift.Void)
+}
+extension Swift.Array where Element == AtomCore.AtomCity {
+  public func getOptimizedCities(response: @escaping ([AtomCore.AtomCity]?, (any Swift.Error)?) -> Swift.Void)
+}
+extension Swift.Array where Element == AtomCore.AtomDatacenters {
+  public func getOptimizedDataCenters(response: @escaping ([AtomCore.AtomDatacenters]?, (any Swift.Error)?) -> Swift.Void)
+}
+extension Foundation.NSArray : AtomCore.PingProtocol {
+  @objc dynamic public func getOptimizedCountries(response: @escaping ([AtomCore.AtomCountry]?, (any Swift.Error)?) -> Swift.Void)
+  @objc dynamic public func getOptimizedCities(response: @escaping ([AtomCore.AtomCity]?, (any Swift.Error)?) -> Swift.Void)
+  @objc dynamic public func getOptimizedDataCenters(response: @escaping ([AtomCore.AtomDatacenters]?, (any Swift.Error)?) -> Swift.Void)
+}
+@objc @_inheritsConvenienceInitializers public class AtomOvpnConfiguration : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc public var configuration_version: Swift.String?
+  @objc public var protocols: [AtomCore.AtomOvpnConfigurationProtocol]?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class AtomSmartConnect : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc public var id: Swift.Int
+  @objc public var name: Swift.String?
+  @objc public var title: Swift.String?
+  @objc public var protocols: [AtomCore.AtomProtocol]?
+  @objc public var smartConnectProtocolDns: [AtomCore.AtomSmartConnectProtocolDns]?
+  @objc public var host: Swift.String?
+  @objc public var configurationVersion: Swift.String?
+  @objc public var dnsType: Swift.String?
+  @objc public var `protocol`: Swift.String?
+  @objc public var protocolNumber: Swift.Int
+  @objc public var isMultiport: Swift.Bool
+  @objc public var tags: Swift.Array<Swift.String>?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class AtomOvpnConfigurationProtocol : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc public var ovpnConfigurationId: Swift.String?
+  @objc public var configuration: Swift.String?
+  @objc public var configuration_version: Swift.String?
+  @objc public var protocols: AtomCore.AtomProtocol
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public class AtomDedicatedIPServerPing : ObjectiveC.NSObject {
+  @objc public init(serverAddress: Swift.String)
+  @objc public var serverAddress: Swift.String?
+  @objc public var serverIP: Swift.String?
+  @objc public var latency: Foundation.NSNumber?
+  @objc public var unit: Swift.String?
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class AtomDefaultAccount : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc public var id: Swift.String?
+  @objc public var vpn_username: Swift.String?
+  @objc public var vpn_password: Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class AppHelperFunctions : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension AtomCore.AppHelperFunctions {
+  @objc dynamic public func getUserAgentForNetworkRequest(bundle: Foundation.Bundle) -> Swift.String?
+  @objc dynamic public func displayName(_ bundle: Foundation.Bundle = .main) -> Swift.String?
+  @objc dynamic public func versionNumber(_ bundle: Foundation.Bundle? = .main) -> Swift.String?
+  @objc dynamic public func buildNumber(_ bundle: Foundation.Bundle? = .main) -> Swift.String?
+}
+@_inheritsConvenienceInitializers @objc public class AtomDatacenters : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
+  @objc override dynamic public init()
+  @objc public var dataCenterId: Swift.Int
+  @objc public var name: Swift.String?
+  @objc public var ip: Swift.String?
+  @objc public var hostname: Swift.String?
+  @objc public var latency: Swift.Int
+  @objc public var custom_attributes: [AtomCore.AtomCustomAttributeObjects]?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc public init(fromJSON: Foundation.NSDictionary)
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc override dynamic public func setValue(_ value: Any?, forUndefinedKey key: Swift.String)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public enum AtomSmartConnectTag : Swift.Int {
+  case Automatic = 0, FileSharing, FreeFileSharing, AutomaticFileSharing, FreeUsers, Natted, NattedFileSharing, Paid, AvfFileSharing, AvfSecurity
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class AtomCityProtocolDns : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
+  @objc override dynamic public init()
+  @objc public var id: Swift.String
+  @objc public var cityId: Swift.Int
+  @objc public var protocols: AtomCore.AtomProtocol?
+  @objc public var dns: AtomCore.AtomDns?
+  @objc public var configuration_version: Swift.String
+  @objc public var multiport_supported: Swift.Bool
+  @objc public var port_number: Swift.Int
+  @objc public var api_endpoint: Swift.Int
+  public func copyObject() throws -> AtomCore.AtomCityProtocolDns
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class AtomMasterCustomAttributes : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
+  @objc override dynamic public init()
+  @objc public var id: Swift.String?
+  @objc public var attribute: Swift.String?
+  @objc public var datatype: Swift.String?
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class HeaderModel : Swift.Codable {
+  final public let response_code: Swift.Int?
+  final public let message: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class AtomGroups : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc public var groupId: Swift.String
+  @objc public var name: Swift.String?
+  @objc public var parent_group_id: Swift.String
+  @objc public var custom_attributes: [AtomCore.AtomCustomAttributeObjects]?
+  @objc public var protocols: [AtomCore.AtomProtocol]?
+  @objc public var channels: [AtomCore.AtomChannel]?
+  @objc public var countries: [AtomCore.AtomCountry]?
+  @objc public var packages: [AtomCore.AtomPackages]?
+  @objc public var cities: [AtomCore.AtomCity]?
+  @objc public var purposes: [AtomCore.AtomPurposes]?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class AtomProtocol : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
+  @objc override dynamic public init()
+  @objc public var name: Swift.String?
+  @objc public var `protocol`: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc public var port_number: Swift.Int
+  @objc public var multiport_range: Swift.String?
+  @objc public var configuration: Swift.String?
+  @objc public var multiport_supported: Swift.Bool
+  @objc public var dns: [AtomCore.AtomDns]?
+  @objc public var protocolSwitch: [AtomCore.AtomProtocol]?
+  @objc public var custom_attributes: [AtomCore.AtomCustomAttributeObjects]?
+  public func copyObject() throws -> AtomCore.AtomProtocol
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public class AtomTimestamp : Swift.Codable {
+  public init()
+  public var localTimeStamp: Swift.Int
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class AtomPurposes : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc public var purposeId: Swift.Int
+  @objc public var name: Swift.String?
+  @objc public var countries: [AtomCore.AtomCountry]?
+  @objc public var protocols: [AtomCore.AtomProtocol]?
+  @objc public var purposeProtocolDns: [AtomCore.AtomPurposeProtocolDns]?
+  @objc public var custom_attributes: [AtomCore.AtomCustomAttributeObjects]?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public enum AtomSDKError : Swift.Int {
+  case SecretKeyRequired = 5001
+  case AccessTokenRequestFailed = 5002
+  case AccessTokenGeneralError = 5003
+  case AccessTokenJsonNotSerialized = 5005
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum AtomCoreNetworkError : Swift.Int {
+  case CoreParsingFailed = 4001
+  case CoreUrlNotFound = 4002
+  case CoreWebClientException = 4003
+  case CoreRequestFailed = 4006
+  case CoreRequestParameterEncodingFailed = 4007
+  case PingFailed = 7309
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class AtomChannelProtocolDns : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
+  @objc override dynamic public init()
+  @objc public var id: Swift.String
+  @objc public var channelId: Swift.Int
+  @objc public var protocols: AtomCore.AtomProtocol?
+  @objc public var dns: AtomCore.AtomDns?
+  @objc public var configuration_version: Swift.String
+  @objc public var multiport_supported: Swift.Bool
+  @objc public var port_number: Swift.Int
+  @objc public var api_endpoint: Swift.Int
+  public func copyObject() throws -> AtomCore.AtomChannelProtocolDns
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class AtomChannel : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
+  @objc override dynamic public init()
+  @objc public var channelId: Swift.Int
+  @objc public var name: Swift.String?
+  @objc public var channel_url: Swift.String?
+  @objc public var icon: Swift.String?
+  @objc public var country: Swift.String?
+  @objc public var slug: Swift.String?
+  @objc public var protocols: [AtomCore.AtomProtocol]?
+  @objc public var custom_attributes: [AtomCore.AtomCustomAttributeObjects]?
+  @objc public var channelProtocolDns: [AtomCore.AtomChannelProtocolDns]?
+  @objc public var recommendedProtocol: AtomCore.AtomProtocol?
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class AtomCountryProtocolDns : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
+  @objc override dynamic public init()
+  @objc public var id: Swift.String?
+  @objc public var country: Swift.String?
+  @objc public var protocols: AtomCore.AtomProtocol?
+  @objc public var dns: AtomCore.AtomDns?
+  @objc public var configuration_version: Swift.String
+  @objc public var multiport_supported: Swift.Bool
+  @objc public var port_number: Swift.Int
+  @objc public var api_endpoint: Swift.Int
+  public func copyObject() throws -> AtomCore.AtomCountryProtocolDns
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class SmartConnectTagHelper : ObjectiveC.NSObject {
+  @objc public static func getString(from: AtomCore.AtomSmartConnectTag) -> Swift.String
+  @objc public static func getTagFromString(_ from: Swift.String) -> AtomCore.AtomSmartConnectTag
+  @objc public static func getTagFromInt(_ from: Swift.Int) -> AtomCore.AtomSmartConnectTag
+  @objc public static func getTagValueFromInt(_ from: Foundation.NSNumber) -> Swift.String
+  @objc public static func getAvailableTags() -> Swift.Array<Swift.Int>
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class AtomCustomAttributeObjects : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
+  @objc override dynamic public init()
+  @objc public var customAttributeId: Swift.String?
+  @objc public var masterCustomAttribute: AtomCore.AtomMasterCustomAttributes
+  @objc public var value: Swift.String?
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class AtomSmartConnectProtocolDns : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc public var id: Swift.String
+  @objc public var smartConnectId: Swift.Int
+  @objc public var protocols: AtomCore.AtomProtocol?
+  @objc public var dns: AtomCore.AtomDns?
+  @objc public var api_endpoint: Swift.Int
+  @objc public var configuration_version: Swift.String
+  @objc public var multiport_supported: Swift.Bool
+  @objc public var port_number: Swift.Int
+  public func copyObject() throws -> AtomCore.AtomSmartConnectProtocolDns
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public enum IntOrString : Swift.Codable {
+  case int(Swift.Int)
+  case string(Swift.String)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc extension Foundation.NSError {
+  @objc public static func errorWithResponseParams(_ responseParams: Foundation.NSDictionary, domain: Swift.String = "AtomException") -> Foundation.NSError?
+  @objc public static func errorWithCode(_ code: ObjectiveC.NSInteger, message: Swift.String, domain: Swift.String = "AtomException") -> Foundation.NSError?
+  @objc public static func errorWithCode(_ code: ObjectiveC.NSInteger, errorMessage: Swift.String, andFailureMessage: Swift.String, domain: Swift.String = "AtomException") -> Foundation.NSError?
+}
+extension AtomCore.DeviceTypes : Swift.Equatable {}
+extension AtomCore.DeviceTypes : Swift.Hashable {}
+extension AtomCore.DeviceTypes : Swift.RawRepresentable {}
+extension AtomCore.AtomSmartConnectTag : Swift.Equatable {}
+extension AtomCore.AtomSmartConnectTag : Swift.Hashable {}
+extension AtomCore.AtomSmartConnectTag : Swift.RawRepresentable {}
+extension AtomCore.AtomSDKError : Swift.Equatable {}
+extension AtomCore.AtomSDKError : Swift.Hashable {}
+extension AtomCore.AtomSDKError : Swift.RawRepresentable {}
+extension AtomCore.AtomCoreNetworkError : Swift.Equatable {}
+extension AtomCore.AtomCoreNetworkError : Swift.Hashable {}
+extension AtomCore.AtomCoreNetworkError : Swift.RawRepresentable {}

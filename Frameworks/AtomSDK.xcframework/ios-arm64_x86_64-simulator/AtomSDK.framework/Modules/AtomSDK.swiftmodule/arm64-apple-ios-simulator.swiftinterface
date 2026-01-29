@@ -1,0 +1,276 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AtomSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import AtomCore
+@_exported import AtomSDK
+import CoreLocation
+import Foundation
+import Swift
+import SystemConfiguration
+import AtomSDK.WireGuardKey
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import dnssd
+import os.log
+import os
+public enum ResolveType : dnssd.DNSServiceProtocol {
+  case ipv4, ipv6, any
+  public init?(rawValue: dnssd.DNSServiceProtocol)
+  public typealias RawValue = dnssd.DNSServiceProtocol
+  public var rawValue: dnssd.DNSServiceProtocol {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class Resolver {
+  public static var queue: Dispatch.DispatchQueue {
+    get
+    set
+  }
+  public static var activeCount: Swift.Int {
+    get
+  }
+  final public let hostname: Swift.String
+  public var ipv4Result: [Swift.String]
+  public var ipv6Result: [Swift.String]
+  public var result: [Swift.String] {
+    get
+  }
+  public static func resolve(hostname: Swift.String, qtype: AtomSDK.ResolveType = .ipv4, firstResult: Swift.Bool = true, timeout: Swift.Int = 3, completionHanlder: @escaping (AtomSDK.Resolver?, dnssd.DNSServiceErrorType?) -> ()) -> Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class AtomShieldData : ObjectiveC.NSObject, Swift.Codable {
+  @objc public func getTotalCount() -> Swift.Int
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class WireGuardKey : ObjectiveC.NSObject {
+  @objc public static func getLastCreatedKey() -> AtomSDK.WireGuardKey
+  @objc deinit
+}
+public enum ReachabilityError : Swift.Error {
+  case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)
+  case failedToCreateWithHostname(Swift.String, Swift.Int32)
+  case unableToSetCallback(Swift.Int32)
+  case unableToSetDispatchQueue(Swift.Int32)
+  case unableToGetFlags(Swift.Int32)
+}
+@available(*, unavailable, renamed: "Notification.Name.reachabilityChanged")
+public let ReachabilityChangedNotification: Foundation.NSNotification.Name
+extension Foundation.NSNotification.Name {
+  public static let reachabilityChanged: Foundation.Notification.Name
+}
+public class Reachability {
+  public typealias NetworkReachable = (AtomSDK.Reachability) -> ()
+  public typealias NetworkUnreachable = (AtomSDK.Reachability) -> ()
+  public enum NetworkStatus : Swift.CustomStringConvertible {
+    case notReachable, reachableViaWiFi, reachableViaWWAN
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: AtomSDK.Reachability.NetworkStatus, b: AtomSDK.Reachability.NetworkStatus) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Connection : Swift.CustomStringConvertible {
+    @available(*, deprecated, renamed: "unavailable")
+    case none
+    case unavailable, wifi, cellular
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: AtomSDK.Reachability.Connection, b: AtomSDK.Reachability.Connection) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var whenReachable: AtomSDK.Reachability.NetworkReachable?
+  public var whenUnreachable: AtomSDK.Reachability.NetworkUnreachable?
+  @available(*, deprecated, renamed: "allowsCellularConnection")
+  final public let reachableOnWWAN: Swift.Bool
+  public var allowsCellularConnection: Swift.Bool
+  public var notificationCenter: Foundation.NotificationCenter
+  @available(*, deprecated, renamed: "connection.description")
+  public var currentReachabilityString: Swift.String {
+    get
+  }
+  @available(*, unavailable, renamed: "connection")
+  public var currentReachabilityStatus: AtomSDK.Reachability.Connection {
+    get
+  }
+  public var connection: AtomSDK.Reachability.Connection {
+    get
+  }
+  required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main)
+  convenience public init(hostname: Swift.String, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  convenience public init(queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  @objc deinit
+}
+extension AtomSDK.Reachability {
+  public func startNotifier() throws
+  public func stopNotifier()
+  @available(*, deprecated, message: "Please use `connection != .none`")
+  public var isReachable: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, message: "Please use `connection == .cellular`")
+  public var isReachableViaWWAN: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, message: "Please use `connection == .wifi`")
+  public var isReachableViaWiFi: Swift.Bool {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+}
+@objc extension AtomSDK.AtomManager {
+  @objc dynamic public func findClosestCountry(userLocation: AtomCore.AtomCountry, countryList: Swift.Array<AtomCore.AtomCountry>) -> AtomCore.AtomCountry?
+  @objc dynamic public func findClosestLocation(userLocation: AtomCore.AtomCountry, countryList: Swift.Array<AtomCore.AtomCountry>) -> AtomCore.AtomLocation?
+  @objc dynamic public func findCountry(country: AtomCore.AtomCountry, countryList: Swift.Array<AtomCore.AtomCountry>) -> AtomCore.AtomCountry?
+  @objc dynamic public func shouldAllowDialingWithIP(domain: Foundation.NSString, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
+}
+@objc public protocol AtomShieldManagerDelegate {
+  @objc func onAtomShieldStatusChange(status: AtomSDK.AtomShieldStatus, error: Foundation.NSError?, message: Swift.String?)
+  @objc func onAtomShieldDataReceived(data: AtomSDK.AtomShieldData?)
+}
+@objc public enum AtomOnDemandRuleType : Swift.Int {
+  case connect
+  case disconnect
+  case ignore
+  case evaluateConnection
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum AtomOnDemandInterfaceType : Swift.Int {
+  @available(macOS 10.11, iOS 11.0, tvOS 17.0, *)
+  @available(watchOS, unavailable)
+  case any
+  @available(macOS 10.11, tvOS 17.0, *)
+  @available(iOS, unavailable)
+  @available(watchOS, unavailable)
+  case ethernet
+  @available(macOS 10.11, iOS 11.0, tvOS 17.0, *)
+  @available(watchOS, unavailable)
+  case wifi
+  @available(iOS 11.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  case cellular
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class AtomOnDemandRule : ObjectiveC.NSObject {
+  @objc final public let type: AtomSDK.AtomOnDemandRuleType
+  @objc public var SSIDMatch: [Swift.String]?
+  @objc public var dnsSearchDomains: [Swift.String]?
+  @objc public var dnsServerAddresses: [Swift.String]?
+  @objc public var interfaceType: AtomSDK.AtomOnDemandInterfaceType
+  @objc public var probeURL: Foundation.URL?
+  @objc public init(type: AtomSDK.AtomOnDemandRuleType)
+  @objc deinit
+}
+@objc public class AtomOnDemandIgnoreRule : AtomSDK.AtomOnDemandRule {
+  @objc public init(SSIDMatch: [Swift.String]? = nil, interfaceType: AtomSDK.AtomOnDemandInterfaceType = .any)
+  @objc deinit
+}
+@objc public class AtomOnDemandConnectRule : AtomSDK.AtomOnDemandRule {
+  @objc public init(SSIDMatch: [Swift.String]? = nil, interfaceType: AtomSDK.AtomOnDemandInterfaceType = .any)
+  @objc deinit
+}
+extension Foundation.NSDictionary {
+  @objc dynamic public var jsonString: Swift.String? {
+    @objc get
+  }
+}
+extension Foundation.NSDate {
+  @objc dynamic public func getDateInString(format: Swift.String) -> Swift.String
+}
+@objc public class AtomOnDemandDisconnectRule : AtomSDK.AtomOnDemandRule {
+  @objc public init(SSIDMatch: [Swift.String]? = nil, interfaceType: AtomSDK.AtomOnDemandInterfaceType = .any)
+  @objc deinit
+}
+public struct SemanticVersion : Swift.CustomStringConvertible, Swift.Comparable {
+  public let metadataComponents: [Swift.String]
+  public let releaseComponents: [Swift.String]
+  public let versionComponents: [Swift.Int]
+  public var description: Swift.String
+  public var major: Swift.Int {
+    get
+  }
+  public var minor: Swift.Int {
+    get
+  }
+  public var patch: Swift.Int {
+    get
+  }
+  public init(_ version: Swift.String) throws
+  public func compare(to other: AtomSDK.SemanticVersion) -> Foundation.ComparisonResult
+  public static func == (lhs: AtomSDK.SemanticVersion, rhs: AtomSDK.SemanticVersion) -> Swift.Bool
+  public static func > (lhs: AtomSDK.SemanticVersion, rhs: AtomSDK.SemanticVersion) -> Swift.Bool
+  public static func < (lhs: AtomSDK.SemanticVersion, rhs: AtomSDK.SemanticVersion) -> Swift.Bool
+}
+@_inheritsConvenienceInitializers @objc public class Authentication : ObjectiveC.NSObject, AtomCore.ManagerProtocol {
+  @objc public var accessToken: AtomCore.AccessTokenModel?
+  @objc public var activeBaseUrl: Swift.String?
+  @objc public var apiUrl: AtomCore.ApiBaseUrlModel?
+  @objc public var atomConfiguration: AtomCore.AtomConfiguration?
+  @objc public class func setup(atomConfiguration: AtomCore.AtomConfiguration?, baseUrlModel: AtomCore.ApiBaseUrlModel, activeURL: Swift.String?)
+  @objc public func generateAccessToken(authToken: @escaping (_ acc: AtomCore.AccessTokenModel?, _ err: Foundation.NSError?) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum AtomOnDemandEvaluateConnectionRuleAction : Swift.Int {
+  case connectIfNeeded
+  case neverConnect
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class AtomOnDemandEvaluateConnectionRuleItem : ObjectiveC.NSObject {
+  @objc final public let matchDomains: [Swift.String]
+  @objc final public let action: AtomSDK.AtomOnDemandEvaluateConnectionRuleAction
+  @objc public var dnsServers: [Swift.String]?
+  @objc public var probeURL: Foundation.URL?
+  @objc public init(matchDomains: [Swift.String], action: AtomSDK.AtomOnDemandEvaluateConnectionRuleAction, dnsServers: [Swift.String]? = nil, probeURL: Foundation.URL? = nil)
+  @objc deinit
+}
+@objc public class AtomOnDemandEvaluateConnectionRule : AtomSDK.AtomOnDemandRule {
+  @objc public var connectionRules: [AtomSDK.AtomOnDemandEvaluateConnectionRuleItem]?
+  @objc public init(connectionRules: [AtomSDK.AtomOnDemandEvaluateConnectionRuleItem], interfaceType: AtomSDK.AtomOnDemandInterfaceType = .any)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class AtomSDKDarwinNotificationManager : ObjectiveC.NSObject {
+  @objc deinit
+}
+extension AtomSDK.ResolveType : Swift.Equatable {}
+extension AtomSDK.ResolveType : Swift.Hashable {}
+extension AtomSDK.ResolveType : Swift.RawRepresentable {}
+extension AtomSDK.Reachability.NetworkStatus : Swift.Equatable {}
+extension AtomSDK.Reachability.NetworkStatus : Swift.Hashable {}
+extension AtomSDK.Reachability.Connection : Swift.Equatable {}
+extension AtomSDK.Reachability.Connection : Swift.Hashable {}
+extension AtomSDK.AtomOnDemandRuleType : Swift.Equatable {}
+extension AtomSDK.AtomOnDemandRuleType : Swift.Hashable {}
+extension AtomSDK.AtomOnDemandRuleType : Swift.RawRepresentable {}
+extension AtomSDK.AtomOnDemandInterfaceType : Swift.Equatable {}
+extension AtomSDK.AtomOnDemandInterfaceType : Swift.Hashable {}
+extension AtomSDK.AtomOnDemandInterfaceType : Swift.RawRepresentable {}
+extension AtomSDK.AtomOnDemandEvaluateConnectionRuleAction : Swift.Equatable {}
+extension AtomSDK.AtomOnDemandEvaluateConnectionRuleAction : Swift.Hashable {}
+extension AtomSDK.AtomOnDemandEvaluateConnectionRuleAction : Swift.RawRepresentable {}

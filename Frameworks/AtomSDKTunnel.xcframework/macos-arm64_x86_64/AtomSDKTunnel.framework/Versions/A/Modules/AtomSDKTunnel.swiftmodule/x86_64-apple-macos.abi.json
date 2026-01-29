@@ -1,0 +1,1083 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AtomSDKTunnel",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "NetworkExtension",
+        "printedName": "NetworkExtension",
+        "declKind": "Import",
+        "moduleName": "AtomSDKTunnel"
+      },
+      {
+        "kind": "Import",
+        "name": "os.log",
+        "printedName": "os.log",
+        "declKind": "Import",
+        "moduleName": "AtomSDKTunnel"
+      },
+      {
+        "kind": "Import",
+        "name": "OSLog",
+        "printedName": "OSLog",
+        "declKind": "Import",
+        "moduleName": "AtomSDKTunnel"
+      },
+      {
+        "kind": "Import",
+        "name": "os",
+        "printedName": "os",
+        "declKind": "Import",
+        "moduleName": "AtomSDKTunnel"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AtomSDKTunnel",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AtomSDKTunnelDarwinNotificationManager",
+        "printedName": "AtomSDKTunnelDarwinNotificationManager",
+        "declKind": "Class",
+        "usr": "c:@M@AtomSDKTunnel@objc(cs)AtomSDKTunnelDarwinNotificationManager",
+        "mangledName": "$s13AtomSDKTunnel0aB25DarwinNotificationManagerC",
+        "moduleName": "AtomSDKTunnel",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AtomSDKTunnel",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AtomOVPNTunnel",
+        "printedName": "AtomOVPNTunnel",
+        "declKind": "Import",
+        "moduleName": "AtomSDKTunnel"
+      },
+      {
+        "kind": "Import",
+        "name": "NetworkExtension",
+        "printedName": "NetworkExtension",
+        "declKind": "Import",
+        "moduleName": "AtomSDKTunnel"
+      },
+      {
+        "kind": "Import",
+        "name": "OSLog",
+        "printedName": "OSLog",
+        "declKind": "Import",
+        "moduleName": "AtomSDKTunnel"
+      },
+      {
+        "kind": "Import",
+        "name": "os",
+        "printedName": "os",
+        "declKind": "Import",
+        "moduleName": "AtomSDKTunnel"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AtomPacketTunnelProvider",
+        "printedName": "AtomPacketTunnelProvider",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "startTunnel",
+            "printedName": "startTunnel(options:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : ObjectiveC.NSObject]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : ObjectiveC.NSObject]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSObject",
+                        "printedName": "ObjectiveC.NSObject",
+                        "usr": "c:objc(cs)NSObject"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "((any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any Swift.Error)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AtomSDKTunnel@objc(cs)AtomPacketTunnelProvider(im)startTunnelWithOptions:completionHandler:",
+            "mangledName": "$s13AtomSDKTunnel0A20PacketTunnelProviderC05startD07options17completionHandlerySDySSSo8NSObjectCGSg_ys5Error_pSgctF",
+            "moduleName": "AtomSDKTunnel",
+            "overriding": true,
+            "isOpen": true,
+            "objc_name": "startTunnelWithOptions:completionHandler:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "stopTunnel",
+            "printedName": "stopTunnel(with:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NEProviderStopReason",
+                "printedName": "NetworkExtension.NEProviderStopReason",
+                "usr": "c:@E@NEProviderStopReason"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AtomSDKTunnel@objc(cs)AtomPacketTunnelProvider(im)stopTunnelWithReason:completionHandler:",
+            "mangledName": "$s13AtomSDKTunnel0A20PacketTunnelProviderC04stopD04with17completionHandlerySo20NEProviderStopReasonV_yyctF",
+            "moduleName": "AtomSDKTunnel",
+            "overriding": true,
+            "isOpen": true,
+            "objc_name": "stopTunnelWithReason:completionHandler:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "handleAppMessage",
+            "printedName": "handleAppMessage(_:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Foundation.Data?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Foundation.Data?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.Data?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Data",
+                            "printedName": "Foundation.Data",
+                            "usr": "s:10Foundation4DataV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AtomSDKTunnel@objc(cs)AtomPacketTunnelProvider(im)handleAppMessage:completionHandler:",
+            "mangledName": "$s13AtomSDKTunnel0A20PacketTunnelProviderC16handleAppMessage_17completionHandlery10Foundation4DataV_yAHSgcSgtF",
+            "moduleName": "AtomSDKTunnel",
+            "overriding": true,
+            "isOpen": true,
+            "objc_name": "handleAppMessage:completionHandler:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sleep",
+            "printedName": "sleep(completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AtomSDKTunnel@objc(cs)AtomPacketTunnelProvider(im)sleepWithCompletionHandler:",
+            "mangledName": "$s13AtomSDKTunnel0A20PacketTunnelProviderC5sleep17completionHandleryyyc_tF",
+            "moduleName": "AtomSDKTunnel",
+            "overriding": true,
+            "isOpen": true,
+            "objc_name": "sleepWithCompletionHandler:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "wake",
+            "printedName": "wake()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AtomSDKTunnel@objc(cs)AtomPacketTunnelProvider(im)wake",
+            "mangledName": "$s13AtomSDKTunnel0A20PacketTunnelProviderC4wakeyyF",
+            "moduleName": "AtomSDKTunnel",
+            "overriding": true,
+            "isOpen": true,
+            "objc_name": "wake",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "openVPNAdapter",
+            "printedName": "openVPNAdapter(_:configureTunnelWithNetworkSettings:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OpenVPNAdapter",
+                "printedName": "AtomOVPNTunnel.OpenVPNAdapter",
+                "usr": "c:objc(cs)OpenVPNAdapter"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NetworkExtension.NEPacketTunnelNetworkSettings?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NEPacketTunnelNetworkSettings",
+                    "printedName": "NetworkExtension.NEPacketTunnelNetworkSettings",
+                    "usr": "c:objc(cs)NEPacketTunnelNetworkSettings"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "((any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any Swift.Error)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@AtomSDKTunnel@objc(cs)AtomPacketTunnelProvider(im)openVPNAdapter:configureTunnelWithNetworkSettings:completionHandler:",
+            "mangledName": "$s13AtomSDKTunnel0A20PacketTunnelProviderC14openVPNAdapter_09configureD19WithNetworkSettings17completionHandlerySo04OpenG0C_So08NEPacketdjK0CSgys5Error_pSgctF",
+            "moduleName": "AtomSDKTunnel",
+            "objc_name": "openVPNAdapter:configureTunnelWithNetworkSettings:completionHandler:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "openVPNAdapter",
+            "printedName": "openVPNAdapter(_:configureTunnelWithNetworkSettings:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OpenVPNAdapter",
+                "printedName": "AtomOVPNTunnel.OpenVPNAdapter",
+                "usr": "c:objc(cs)OpenVPNAdapter"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NEPacketTunnelNetworkSettings",
+                "printedName": "NetworkExtension.NEPacketTunnelNetworkSettings",
+                "usr": "c:objc(cs)NEPacketTunnelNetworkSettings"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "((any AtomOVPNTunnel.OpenVPNAdapterPacketFlow)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any AtomOVPNTunnel.OpenVPNAdapterPacketFlow)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OpenVPNAdapterPacketFlow",
+                        "printedName": "any AtomOVPNTunnel.OpenVPNAdapterPacketFlow",
+                        "usr": "c:objc(pl)OpenVPNAdapterPacketFlow"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13AtomSDKTunnel0A20PacketTunnelProviderC14openVPNAdapter_09configureD19WithNetworkSettings17completionHandlerySo04OpenG0C_So08NEPacketdjK0CySo0ngC4Flow_pSgctF",
+            "mangledName": "$s13AtomSDKTunnel0A20PacketTunnelProviderC14openVPNAdapter_09configureD19WithNetworkSettings17completionHandlerySo04OpenG0C_So08NEPacketdjK0CySo0ngC4Flow_pSgctF",
+            "moduleName": "AtomSDKTunnel",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "openVPNAdapter",
+            "printedName": "openVPNAdapter(_:handleError:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OpenVPNAdapter",
+                "printedName": "AtomOVPNTunnel.OpenVPNAdapter",
+                "usr": "c:objc(cs)OpenVPNAdapter"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "any Swift.Error",
+                "usr": "s:s5ErrorP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@AtomSDKTunnel@objc(cs)AtomPacketTunnelProvider(im)openVPNAdapter:handleError:",
+            "mangledName": "$s13AtomSDKTunnel0A20PacketTunnelProviderC14openVPNAdapter_11handleErrorySo04OpenG0C_s0I0_ptF",
+            "moduleName": "AtomSDKTunnel",
+            "objc_name": "openVPNAdapter:handleError:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "openVPNAdapter",
+            "printedName": "openVPNAdapter(_:handleEvent:message:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OpenVPNAdapter",
+                "printedName": "AtomOVPNTunnel.OpenVPNAdapter",
+                "usr": "c:objc(cs)OpenVPNAdapter"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OpenVPNAdapterEvent",
+                "printedName": "AtomOVPNTunnel.OpenVPNAdapterEvent",
+                "usr": "c:@E@OpenVPNAdapterEvent"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@AtomSDKTunnel@objc(cs)AtomPacketTunnelProvider(im)openVPNAdapter:handleEvent:message:",
+            "mangledName": "$s13AtomSDKTunnel0A20PacketTunnelProviderC14openVPNAdapter_11handleEvent7messageySo04OpenG0C_So0kgI0VSSSgtF",
+            "moduleName": "AtomSDKTunnel",
+            "objc_name": "openVPNAdapter:handleEvent:message:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "openVPNAdapterDidReceiveClockTick",
+            "printedName": "openVPNAdapterDidReceiveClockTick(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OpenVPNAdapter",
+                "printedName": "AtomOVPNTunnel.OpenVPNAdapter",
+                "usr": "c:objc(cs)OpenVPNAdapter"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@AtomSDKTunnel@objc(cs)AtomPacketTunnelProvider(im)openVPNAdapterDidReceiveClockTick:",
+            "mangledName": "$s13AtomSDKTunnel0A20PacketTunnelProviderC33openVPNAdapterDidReceiveClockTickyySo04OpenG0CF",
+            "moduleName": "AtomSDKTunnel",
+            "objc_name": "openVPNAdapterDidReceiveClockTick:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "openVPNAdapter",
+            "printedName": "openVPNAdapter(_:handleLogMessage:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OpenVPNAdapter",
+                "printedName": "AtomOVPNTunnel.OpenVPNAdapter",
+                "usr": "c:objc(cs)OpenVPNAdapter"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@AtomSDKTunnel@objc(cs)AtomPacketTunnelProvider(im)openVPNAdapter:handleLogMessage:",
+            "mangledName": "$s13AtomSDKTunnel0A20PacketTunnelProviderC14openVPNAdapter_16handleLogMessageySo04OpenG0C_SStF",
+            "moduleName": "AtomSDKTunnel",
+            "objc_name": "openVPNAdapter:handleLogMessage:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AtomSDKTunnel@objc(cs)AtomPacketTunnelProvider",
+        "mangledName": "$s13AtomSDKTunnel0A20PacketTunnelProviderC",
+        "moduleName": "AtomSDKTunnel",
+        "isOpen": true,
+        "intro_Macosx": "10.12",
+        "declAttributes": [
+          "AccessControl",
+          "Available",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NEPacketTunnelProvider",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "NetworkExtension.NEPacketTunnelProvider",
+          "NetworkExtension.NETunnelProvider",
+          "NetworkExtension.NEProvider",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "NEPacketTunnelFlow",
+        "printedName": "NEPacketTunnelFlow",
+        "declKind": "Class",
+        "usr": "c:objc(cs)NEPacketTunnelFlow",
+        "moduleName": "NetworkExtension",
+        "isOpen": true,
+        "intro_Macosx": "10.11",
+        "objc_name": "NEPacketTunnelFlow",
+        "declAttributes": [
+          "Available",
+          "ObjC",
+          "Dynamic"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/NEPacketTunnelProvider+VPNStateManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 453,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/NEPacketTunnelProvider+VPNStateManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 698,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/NEPacketTunnelProvider+VPNStateManager.swift",
+      "kind": "StringLiteral",
+      "offset": 758,
+      "length": 27,
+      "value": "\"com.vpnmanager.stateQueue\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomSDKTunnelDarwinNotificationManager.swift",
+      "kind": "Dictionary",
+      "offset": 445,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 780,
+      "length": 19,
+      "value": "\"com.atomsdktunnel\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 811,
+      "length": 9,
+      "value": "\"Logging\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 1150,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 4389,
+      "length": 9,
+      "value": "\"success\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 4424,
+      "length": 7,
+      "value": "\"error\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 4389,
+      "length": 9,
+      "value": "\"success\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 4424,
+      "length": 7,
+      "value": "\"error\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 4592,
+      "length": 31,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 4611,
+      "length": 1,
+      "value": "\"|\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 4622,
+      "length": 20,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "Array",
+      "offset": 4846,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 4905,
+      "length": 8,
+      "value": "\"action\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 4987,
+      "length": 34,
+      "value": "\"Invalid JSON or missing 'action'\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 5171,
+      "length": 7,
+      "value": "\"PAUSE\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 5215,
+      "length": 6,
+      "value": "\"time\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5242,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 5346,
+      "length": 8,
+      "value": "\"paused\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 5439,
+      "length": 27,
+      "value": "\"Invalid or missing 'time'\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 5520,
+      "length": 8,
+      "value": "\"RESUME\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5570,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 5635,
+      "length": 7,
+      "value": "\"error\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 5819,
+      "length": 9,
+      "value": "\"resumed\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 5904,
+      "length": 11,
+      "value": "\"VPNSTATUS\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 6095,
+      "length": 16,
+      "value": "\"Invalid Action\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 6208,
+      "length": 43,
+      "value": "\"JSON Error: \""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 6250,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/Sources\/AtomSDKTunnel\/AtomPacketTunnelProvider.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7062,
+      "length": 4,
+      "value": "true"
+    }
+  ]
+}
